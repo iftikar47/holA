@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asteroid Blast</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Font -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+    body {
+      background-color: #0d1117;
+      color: #d1d5db;
+      font-family: 'Space Mono', monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    #game-container {
+      padding: 1rem;
+      width: 100%;
+      max-width: 800px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-radius: 12px;
+      box-shadow: 0 0 40px rgba(0, 255, 127, 0.3);
+      overflow: hidden;
+      background: #1a1a2e; /* Dark theme */
+    }
+
+    canvas {
+      background-color: #000000;
+      display: block;
+      border-radius: 8px;
+      box-shadow: inset 0 0 10px rgba(0, 255, 127, 0.5);
+      margin-bottom: 1rem;
+    }
+
+    /* Game Over and Start Screens */
+    #menu-screen {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center; 
+      align-items: center;
+      z-index: 100;
+      background: rgba(0, 0, 0, 0.9);
+      text-align: center;
+    }
+
+    #menu-screen h1 {
+      color: #00ff7f;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 10px #00ff7f;
+    }
+
+    #menu-screen p {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+    }
+
+    .game-button {
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      font-weight: bold;
+      color: #1a1a2e;
+      background: #00ff7f;
+      border: 2px solid #00ff7f;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .game-button:hover {
+      background: transparent;
+      color: #00ff7f;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="game-container">
+    <canvas id="gameCanvas" width="800" height="600"></canvas>
+  </div>
+
+  <div id="menu-screen">
+    <h1>Asteroid Blast</h1>
+    <p>Press Start to Play</p>
+    <button class="game-button">Start Game</button>
+  </div>
+</body>
+</html>
